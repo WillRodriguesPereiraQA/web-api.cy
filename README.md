@@ -12,8 +12,9 @@ O projeto está dividido de forma organizada para separar o que é teste de tela
 *   **`cypress/e2e/api/`**: Guarda os testes das rotas da API (ex: Criar usuário).
 *   **`cypress/fixtures/`**: Guarda arquivos de dados em formato JSON (massa de dados fixa).
 *   **`cypress/support/`**: Guarda comandos criados por você para reaproveitar nos testes.
-
+*   **`cypress/support/pages/`**: Aqui usei o padrão **Page Object Model (POM)**, onde guardo os locators e as ações de cada página para o código não ficar bagunçado.
 ---
+
 
 ## ❓ Arquivos criados automaticamente (Template Spec)
 
