@@ -3,7 +3,7 @@
 Funcionalidade: Cadastro e compra de produtos com validação de carrinho
 
   Cenário: Criar usuário com dados randômicos, buscar produtos e validar itens no checkout
-    Dado que acesso o site "https://www.automationexercise.com/"
+    Dado que acesso o site
     E crio um novo usuário com dados randômicos
     Quando entro na aba "Products"
     E realizo uma busca randômica por produtos

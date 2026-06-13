@@ -1,11 +1,11 @@
 export class TrelloApi {
   constructor() {
-    this.baseUrl = "https://api.trello.com/1";
+    this.baseUrl = Cypress.env('apiBaseUrl') || 'https://api.trello.com/1';
   }
 
   getAction(actionId) {
     return cy.request({
-      method: "GET",
+      method: 'GET',
       url: `${this.baseUrl}/actions/${actionId}`,
       failOnStatusCode: false,
     });

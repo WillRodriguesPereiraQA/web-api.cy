@@ -1,7 +1,7 @@
-const { defineConfig } = require("cypress");
-const { addCucumberPreprocessorPlugin } = require("@badeball/cypress-cucumber-preprocessor");
-const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
-const { createEsbuildPlugin } = require("@badeball/cypress-cucumber-preprocessor/esbuild");
+const { defineConfig } = require('cypress');
+const { addCucumberPreprocessorPlugin } = require('@badeball/cypress-cucumber-preprocessor');
+const createBundler = require('@bahmutov/cypress-esbuild-preprocessor');
+const { createEsbuildPlugin } = require('@badeball/cypress-cucumber-preprocessor/esbuild');
 
 async function setupPlugins(on, config) {
   await addCucumberPreprocessorPlugin(on, config);
@@ -10,7 +10,7 @@ async function setupPlugins(on, config) {
     plugins: [createEsbuildPlugin(config)],
   });
 
-  on("file:preprocessor", bundler);
+  on('file:preprocessor', bundler);
 
   return config;
 }
@@ -19,8 +19,9 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents: setupPlugins,
     // Alterado: Foca apenas em arquivos .feature como specs válidas
-    specPattern: "cypress/e2e/**/*.feature", 
-    baseUrl: "https://www.automationexercise.com/",
+    specPattern: 'cypress/e2e/**/*.feature',
+    // Mantemos `baseUrl` para compatibilidade, mas recomendando uso de `env.webBaseUrl` e `env.apiBaseUrl`
+    baseUrl: process.env.WEB_BASE_URL || 'https://www.automationexercise.com/',
     pageLoadTimeout: 180000,
     defaultCommandTimeout: 30000,
     requestTimeout: 60000,
@@ -30,13 +31,16 @@ module.exports = defineConfig({
     },
     // CORREÇÃO AQUI: O mapeamento de passos deve ficar dentro do bloco env
     env: {
+      // URLs separados para web e api. Use `Cypress.env('webBaseUrl')` e `Cypress.env('apiBaseUrl')` nos testes.
+      webBaseUrl: process.env.WEB_BASE_URL || 'https://www.automationexercise.com/',
+      apiBaseUrl: process.env.API_BASE_URL || 'https://api.trello.com/1',
       stepDefinitions: [
-        "cypress/e2e/api/**/*.{js,ts}",
-        "cypress/e2e/web/**/*.{js,ts}",
-        "cypress/e2e/ui/**/*.{js,ts}",
-        "cypress/support/step_definitions/**/*.{js,ts}"
+        'cypress/e2e/api/**/*.{js,ts}',
+        'cypress/e2e/web/**/*.{js,ts}',
+        'cypress/e2e/ui/**/*.{js,ts}',
+        'cypress/support/step_definitions/**/*.{js,ts}',
       ],
-      omitFilteredSteps: true
-    }
+      omitFilteredSteps: true,
+    },
   },
 });

@@ -3,6 +3,7 @@
 Este projeto automatiza testes **web** e **API** usando **Cypress** e **BDD/Cucumber**.
 
 A solução traz:
+
 - cenários web em **`.feature`** no **`cypress/e2e/web/`**
 - cenários API em **`.feature`** no **`cypress/e2e/api/`**
 - definições de passos em **`cypress/support/step_definitions/`**
@@ -15,10 +16,12 @@ A solução traz:
 ## 🎯 Escopo dos testes
 
 ### Web — Automation Exercise
+
 - **URL:** https://www.automationexercise.com/
 - **Objetivo:** validar cadastro de usuário, busca de produtos, adição ao carrinho e checkout.
 
 ### API — Trello
+
 - **URL base:** https://api.trello.com/1
 - **Objetivo:** consultar uma ação Trello e validar o `list.name` retornado.
 
@@ -27,6 +30,7 @@ A solução traz:
 ## 📂 Estrutura do projeto
 
 ### Arquivos principais
+
 - **`cypress/e2e/web/AutomationExercise.cy.feature`**
   - cenário BDD em português para o fluxo completo do site Automation Exercise.
 - **`cypress/e2e/api/trello-action-list.feature`**
@@ -61,27 +65,50 @@ A solução traz:
 ## ⚙️ Como executar
 
 ### Instalar dependências
+
 ```bash
 npm install
 ```
 
 ### Executar o cenário BDD web
+
 ```bash
 npx cypress run --spec "cypress/e2e/web/AutomationExercise.cy.feature"
 ```
 
 ### Executar o cenário BDD API
+
 ```bash
 npx cypress run --spec "cypress/e2e/api/trello-action-list.feature"
 ```
 
-### Executar web e API juntos e Gerar Relatórios 
+### Executar web e API juntos e Gerar Relatórios
+
 ```bash
 npm run test:all
 ```
 
-### Ver o resultado 
+### Ver o resultado
+
 O relatório será criado na pasta `cypress/reports/dashboard`. Basta abrir o arquivo **`index.html`**
+
+---
+
+## 🧹 Qualidade do código
+
+- **ESLint** valida o código JavaScript
+- **Prettier** formata automaticamente
+- **Commitlint** valida mensagens de commit
+
+```bash
+npm run lint        # verifica erros
+npm run lint:fix    # corrige automaticamente
+npm run format      # formata com Prettier
+npm run format:check # verifica formatação
+```
+
+- **Husky** (pre-commit): roda `lint:fix` + `format` antes de cada commit
+- **Commitlint** (commit-msg): valida mensagens no padrão Conventional Commits
 
 ---
 
@@ -90,9 +117,10 @@ O relatório será criado na pasta `cypress/reports/dashboard`. Basta abrir o ar
 - Para separar os testes, o projeto usa duas variáveis de ambiente simples:
   - `WEB_BASE_URL` — URL da aplicação web (padrão: https://www.automationexercise.com/)
   - `API_BASE_URL` — URL base da API (padrão: https://api.trello.com/1)
+
     ```
 
-
+    ```
 
 ## ✅ Status atual
 
@@ -105,5 +133,6 @@ O relatório será criado na pasta `cypress/reports/dashboard`. Basta abrir o ar
 - [x] Execução de teste com sucesso em `trello-action-list.feature`
 
 ### Evidências
+
 <img width="1776" height="962" alt="Captura de tela 2026-06-13 105047" src="https://github.com/user-attachments/assets/a3628503-faed-4e63-9653-d6fa7caf9ebd" />
 <img width="1895" height="870" alt="Captura de tela 2026-06-13 105027" src="https://github.com/user-attachments/assets/4580e643-925a-4387-b702-7d58edb5f4d7" />

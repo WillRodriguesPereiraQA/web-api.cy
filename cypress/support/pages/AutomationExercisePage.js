@@ -1,6 +1,9 @@
 export class AutomationExercisePage {
   constructor() {
-    this.siteUrl = 'https://www.automationexercise.com/';
+    this.siteUrl =
+      Cypress.env('webBaseUrl') ||
+      Cypress.config('baseUrl') ||
+      'https://www.automationexercise.com/';
 
     // Navegação
     this.homeLink = 'a[href="/"]';
@@ -138,7 +141,7 @@ export class AutomationExercisePage {
   }
 
   getViewCartButton() {
-    return cy.contains("a", "Cart");
+    return cy.contains('a', 'Cart');
   }
 
   getCartProducts() {
@@ -146,7 +149,7 @@ export class AutomationExercisePage {
   }
 
   getProceedToCheckoutButton() {
-    return cy.contains("a", "Proceed To Checkout");
+    return cy.contains('a', 'Proceed To Checkout');
   }
 
   getContinueShoppingButton() {
