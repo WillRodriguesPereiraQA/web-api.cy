@@ -5,7 +5,7 @@ Este projeto automatiza testes **web** e **API** usando **Cypress**.
 A solução traz:
 
 - cenários web em **`.feature`** no **`cypress/e2e/web/`** (BDD/Cucumber)
-- testes de API como specs Cypress diretas em **`cypress/e2e/api/*.cy.js`** (sem BDD)
+- testes de API como specs Cypress diretas em **`cypress/e2e/api/*.cy.js`**
 - Page Object (POM) em **`cypress/support/pages/AutomationExercisePage.js`**
 - API object em **`cypress/support/api_objects/TrelloApiObject.js`**
 - configuração de **Cypress + esbuild** em **`cypress.config.js`**
@@ -30,20 +30,21 @@ A solução traz:
 
 ### Arquivos principais
 
-  - cenário BDD em português para o fluxo completo do site Automation Exercise.
-  - cenário BDD para consulta à API Trello e validação do `list.name`.
-  - implementa os passos web `Dado`, `Quando`, `Então` usados pelo `.feature`.
-  - implementa os passos API `Dado`, `Quando`, `Então` usados pelo `.feature`.
-  - Page Object com locators e métodos reutilizáveis para a aplicação web.
-  - API object para enviar requisições Trello.
-  - fixture com dados de teste para o fluxo Trello.
-  - configura o Cypress para rodar `.feature` e registrar o Cucumber preprocessor.
+- cenário BDD em português para o fluxo completo do site Automation Exercise.
+- cenário BDD para consulta à API Trello e validação do `list.name`.
+- Page Object com locators e métodos reutilizáveis para a aplicação web.
+- API object para enviar requisições Trello.
+- fixture com dados de teste para o fluxo Trello.
+- configura o Cypress para rodar `.feature` e registrar o Cucumber preprocessor.
+
 ---
+
 ## 🧩 Como funciona a integração BDD
+
 1. O arquivo **`.feature`** descreve o cenário de forma legível.
-3. Os arquivos em **`cypress/support/step_definitions/`** mapeiam cada passo para código Cypress:
+2. Os arquivos em **`cypress/support/step_definitions/`** mapeiam cada passo para código Cypress:
    - **`TrelloSteps.js`** — passos API
-5. O API object encapsula as requisições em **`cypress/support/api - objects/TrelloApiObject.js`**.
+3. O API object encapsula as requisições em **`cypress/support/api - objects/TrelloApiObject.js`**.
 
 ---
 
@@ -81,19 +82,10 @@ O relatório será criado na pasta `cypress/reports/dashboard`. Basta abrir o ar
 
 ## 🧹 Qualidade do código
 
-- **ESLint** valida o código JavaScript
-- **Prettier** formata automaticamente
-- **Commitlint** valida mensagens de commit
-
 ```bash
 npm run lint        # verifica erros
-npm run lint:fix    # corrige automaticamente
-npm run format      # formata com Prettier
-npm run format:check # verifica formatação
-```
 
-- **Husky** (pre-commit): roda `lint:fix` + `format` antes de cada commit
-- **Commitlint** (commit-msg): valida mensagens no padrão Conventional Commits
+```
 
 ---
 
