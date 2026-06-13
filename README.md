@@ -75,15 +75,13 @@ npx cypress run --spec "cypress/e2e/web/AutomationExercise.cy.feature"
 npx cypress run --spec "cypress/e2e/api/trello-action-list.feature"
 ```
 
-### Executar web e API juntos
+### Executar web e API juntos e Gerar Relatórios 
 ```bash
-npx cypress run --spec "cypress/e2e/web/AutomationExercise.cy.feature,cypress/e2e/api/trello-action-list.feature"
+npm run test:all
 ```
 
-### Executar em modo visual
-```bash
-npx cypress open
-```
+### Ver o resultado 
+O relatório será criado na pasta `cypress/reports/dashboard`. Basta abrir o arquivo **`index.html`**
 
 ---
 

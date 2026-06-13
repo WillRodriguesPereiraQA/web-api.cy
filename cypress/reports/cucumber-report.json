@@ -19,7 +19,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3453000000
+              "duration": 4126000000
             }
           },
           {
@@ -32,7 +32,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 11265000000
+              "duration": 13446000000
             }
           },
           {
@@ -45,7 +45,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2020000000
+              "duration": 5461000000
             }
           },
           {
@@ -58,7 +58,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1649000000
+              "duration": 1833000000
             }
           },
           {
@@ -71,7 +71,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1005000000
+              "duration": 933000000
             }
           },
           {
@@ -84,7 +84,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2700000000
+              "duration": 2032000000
             }
           }
         ],
@@ -107,25 +107,65 @@
         "line": 2
       }
     ],
-    "uri": "cypress\\e2e\\web\\AutomationExercise.cy.feature"
+    "uri": "cypress\\e2e\\web\\AutomationExercise.feature"
   },
   {
     "description": "  Como consumidor da API Trello\n  Quero recuperar o nome da lista associada a uma ação\n  Para validar o status e exibir o nome corretamente",
     "elements": [
       {
-        "description": "    Dado que uso a API do Trello para obter a ação \"592f11060f95a3d3d46a987a\"\n    Quando envio uma requisição GET para a ação Trello\n    Então devo receber o status code 200 e exibir o nome da lista",
+        "description": "",
         "id": "consulta-de-ação-trello;obter-o-nome-da-lista-de-uma-ação-trello",
-        "keyword": "Scenario",
-        "line": 6,
+        "keyword": "Cenário",
+        "line": 7,
         "name": "Obter o nome da lista de uma ação Trello",
-        "steps": [],
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 8,
+            "name": "que uso a API do Trello para obter a ação \"592f11060f95a3d3d46a987a\"",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 36000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 9,
+            "name": "envio uma requisição GET para a ação Trello",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 306000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 10,
+            "name": "devo receber o status code \"200\" e exibir o nome da lista",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19000000
+            }
+          }
+        ],
         "tags": [],
         "type": "scenario"
       }
     ],
     "id": "consulta-de-ação-trello",
-    "line": 1,
-    "keyword": "Feature",
+    "line": 2,
+    "keyword": "Funcionalidade",
     "name": "Consulta de ação Trello",
     "tags": [],
     "uri": "cypress\\e2e\\api\\trello-action-list.feature"

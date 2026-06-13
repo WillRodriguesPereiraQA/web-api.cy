@@ -7,7 +7,7 @@ export class AutomationExercisePage {
     this.productsTab = 'a:contains("Products")';
 
     // Cadastro/Autenticação
-    this.signupLoginLink = 'a:contains("Signup / Login")';
+    this.signupLoginLink = 'a[href="/login"]';
     this.signupNameInput = 'input[data-qa="signup-name"]';
     this.signupEmailInput = 'input[data-qa="signup-email"]';
     this.signupButton = 'button[data-qa="signup-button"]';
@@ -42,11 +42,11 @@ export class AutomationExercisePage {
   }
 
   visitHome() {
-    cy.visit(this.siteUrl);
+    cy.visitAutomationExercise(this.siteUrl);
   }
 
   getSignupLoginLink() {
-    return cy.contains("a", "Signup / Login");
+    return cy.get(this.signupLoginLink, { timeout: 30000 });
   }
 
   getSignupNameInput() {
@@ -118,7 +118,7 @@ export class AutomationExercisePage {
   }
 
   getProductsTab() {
-    return cy.contains("a", "Products");
+    return cy.get('a[href="/products"]', { timeout: 30000 });
   }
 
   getSearchInput() {

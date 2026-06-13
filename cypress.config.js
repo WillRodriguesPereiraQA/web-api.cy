@@ -18,11 +18,25 @@ async function setupPlugins(on, config) {
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents: setupPlugins,
-    specPattern: "cypress/e2e/**/*.{cy.js,feature}",
-    stepDefinitions: "cypress/support/step_definitions",
+    // Alterado: Foca apenas em arquivos .feature como specs válidas
+    specPattern: "cypress/e2e/**/*.feature", 
     baseUrl: "https://www.automationexercise.com/",
-    pageLoadTimeout: 120000,
-    defaultCommandTimeout: 15000,
-    requestTimeout: 15000,
+    pageLoadTimeout: 180000,
+    defaultCommandTimeout: 30000,
+    requestTimeout: 60000,
+    retries: {
+      runMode: 1,
+      openMode: 0,
+    },
+    // CORREÇÃO AQUI: O mapeamento de passos deve ficar dentro do bloco env
+    env: {
+      stepDefinitions: [
+        "cypress/e2e/api/**/*.{js,ts}",
+        "cypress/e2e/web/**/*.{js,ts}",
+        "cypress/e2e/ui/**/*.{js,ts}",
+        "cypress/support/step_definitions/**/*.{js,ts}"
+      ],
+      omitFilteredSteps: true
+    }
   },
 });

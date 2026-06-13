@@ -5,7 +5,7 @@ const page = new AutomationExercisePage();
 const randomSearchTerms = ["Dress", "Tshirt", "Top", "Men", "Jeans", "Shirt"];
 
 Dado("que acesso o site {string}", (url) => {
-  cy.visit(url);
+  cy.visitAutomationExercise(url);
 });
 
 Dado("crio um novo usuário com dados randômicos", () => {
@@ -14,8 +14,8 @@ Dado("crio um novo usuário com dados randômicos", () => {
   const randomEmail = `teste${timestamp}@mailinator.com`;
   const randomPassword = `Senha@${timestamp}`;
 
-  page.getSignupLoginLink().click();
-  page.getSignupNameInput().type(randomName);
+  page.getSignupLoginLink().should("be.visible").click({ force: true });
+  page.getSignupNameInput().should("be.visible").type(randomName);
   page.getSignupEmailInput().type(randomEmail);
   page.getSignupButton().click();
 
