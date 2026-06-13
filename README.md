@@ -1,15 +1,14 @@
 # 🚀 Automação Web e API com Cypress + BDD
 
-Este projeto automatiza testes **web** e **API** usando **Cypress** e **BDD/Cucumber**.
+Este projeto automatiza testes **web** e **API** usando **Cypress**.
 
 A solução traz:
 
-- cenários web em **`.feature`** no **`cypress/e2e/web/`**
-- cenários API em **`.feature`** no **`cypress/e2e/api/`**
-- definições de passos em **`cypress/support/step_definitions/`**
+- cenários web em **`.feature`** no **`cypress/e2e/web/`** (BDD/Cucumber)
+- testes de API como specs Cypress diretas em **`cypress/e2e/api/*.cy.js`** (sem BDD)
 - Page Object (POM) em **`cypress/support/pages/AutomationExercisePage.js`**
-- API object em **`cypress/support/api - objects/TrelloApiObject.js`**
-- configuração de **Cypress + Cucumber + esbuild** no **`cypress.config.js`**
+- API object em **`cypress/support/api_objects/TrelloApiObject.js`**
+- configuração de **Cypress + esbuild** em **`cypress.config.js`**
 
 ---
 
@@ -31,33 +30,19 @@ A solução traz:
 
 ### Arquivos principais
 
-- **`cypress/e2e/web/AutomationExercise.cy.feature`**
   - cenário BDD em português para o fluxo completo do site Automation Exercise.
-- **`cypress/e2e/api/trello-action-list.feature`**
   - cenário BDD para consulta à API Trello e validação do `list.name`.
-- **`cypress/support/step_definitions/AutomationExerciseSteps.js`**
   - implementa os passos web `Dado`, `Quando`, `Então` usados pelo `.feature`.
-- **`cypress/support/step_definitions/TrelloSteps.js`**
   - implementa os passos API `Dado`, `Quando`, `Então` usados pelo `.feature`.
-- **`cypress/support/pages/AutomationExercisePage.js`**
   - Page Object com locators e métodos reutilizáveis para a aplicação web.
-- **`cypress/support/api - objects/TrelloApiObject.js`**
   - API object para enviar requisições Trello.
-- **`cypress/fixtures/trello-action.json`**
   - fixture com dados de teste para o fluxo Trello.
-- **`cypress.config.js`**
   - configura o Cypress para rodar `.feature` e registrar o Cucumber preprocessor.
-
 ---
-
 ## 🧩 Como funciona a integração BDD
-
 1. O arquivo **`.feature`** descreve o cenário de forma legível.
-2. O Cypress usa o plugin **@badeball/cypress-cucumber-preprocessor** para transformar o Gherkin em testes.
 3. Os arquivos em **`cypress/support/step_definitions/`** mapeiam cada passo para código Cypress:
-   - **`AutomationExerciseSteps.js`** — passos web
    - **`TrelloSteps.js`** — passos API
-4. O Page Object separa os seletores e ações em **`cypress/support/pages/AutomationExercisePage.js`**.
 5. O API object encapsula as requisições em **`cypress/support/api - objects/TrelloApiObject.js`**.
 
 ---
@@ -76,10 +61,10 @@ npm install
 npx cypress run --spec "cypress/e2e/web/AutomationExercise.cy.feature"
 ```
 
-### Executar o cenário BDD API
+### Executar o teste API (spec Cypress)
 
 ```bash
-npx cypress run --spec "cypress/e2e/api/trello-action-list.feature"
+npx cypress run --spec "cypress/e2e/api/trello-action-list.cy.js"
 ```
 
 ### Executar web e API juntos e Gerar Relatórios
@@ -124,15 +109,12 @@ npm run format:check # verifica formatação
 
 ## ✅ Status atual
 
-- [x] BDD/Cucumber configurado para `.feature`
-- [x] `step_definitions` funcionando para web e API
+- [x] BDD/Cucumber configurado para os cenários web em `.feature`
+- [x] Tests de API convertidos para specs Cypress diretas em `cypress/e2e/api/`
 - [x] Page Object criado para o site Automation Exercise
 - [x] API object criado para consulta a Trello
 - [x] Fixture criado para o teste Trello
-- [x] Execução de teste com sucesso em `AutomationExercise.cy.feature`
-- [x] Execução de teste com sucesso em `trello-action-list.feature`
+- [x] Execução de teste web com sucesso em `AutomationExercise.feature`
+- [x] Execução de teste API com sucesso em `trello-action-list.cy.js`
 
 ### Evidências
-
-<img width="1776" height="962" alt="Captura de tela 2026-06-13 105047" src="https://github.com/user-attachments/assets/a3628503-faed-4e63-9653-d6fa7caf9ebd" />
-<img width="1895" height="870" alt="Captura de tela 2026-06-13 105027" src="https://github.com/user-attachments/assets/4580e643-925a-4387-b702-7d58edb5f4d7" />
