@@ -85,6 +85,14 @@ O relatório será criado na pasta `cypress/reports/dashboard`. Basta abrir o ar
 
 ---
 
+## 🔧 Configurar URLs (web / api)
+
+- Para separar os testes, o projeto usa duas variáveis de ambiente simples:
+  - `WEB_BASE_URL` — URL da aplicação web (padrão: https://www.automationexercise.com/)
+  - `API_BASE_URL` — URL base da API (padrão: https://api.trello.com/1)
+    ```
+
+
 
 ## ✅ Status atual
 
