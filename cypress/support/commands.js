@@ -8,8 +8,6 @@ Cypress.Commands.add('visitAutomationExercise', (url) => {
   cy.intercept({ resourceType: /font|media/ }, { statusCode: 204, body: '' });
 
   const visitWithRetry = (attempt = 1) => {
-    cy.intercept('GET', '**/products').as('loadProducts');
-
     cy.request({
       url: target,
       failOnStatusCode: false,
@@ -32,7 +30,6 @@ Cypress.Commands.add('visitAutomationExercise', (url) => {
 
       cy.get('body', { timeout: 8000 }).should('be.visible');
       cy.get(HOME_READY_SELECTOR, { timeout: 15000 }).should('be.visible');
-      cy.wait('@loadProducts', { timeout: 20000 });
     });
   };
 

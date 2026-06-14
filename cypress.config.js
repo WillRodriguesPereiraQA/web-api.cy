@@ -40,7 +40,6 @@ module.exports = defineConfig({
       trelloApiKey: process.env.TRELLO_API_KEY,
       trelloApiToken: process.env.TRELLO_API_TOKEN,
       stepDefinitions: [
-        'cypress/e2e/api/**/*.{js,ts}',
         'cypress/e2e/web/**/*.{js,ts}',
         'cypress/e2e/ui/**/*.{js,ts}',
         'cypress/support/step_definitions/**/*.{js,ts}',

@@ -70,7 +70,6 @@
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": [
-      "cypress/e2e/api/**/*.{js,ts}",
       "cypress/e2e/web/**/*.{js,ts}",
       "cypress/e2e/ui/**/*.{js,ts}",
       "cypress/support/step_definitions/**/*.{js,ts}"
