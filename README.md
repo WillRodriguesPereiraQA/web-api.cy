@@ -9,6 +9,7 @@ A solução traz:
 - Page Object (POM) em **`cypress/support/pages/AutomationExercisePage.js`**
 - API object em **`cypress/support/api_objects/TrelloApiObject.js`**
 - configuração de **Cypress + esbuild** em **`cypress.config.js`**
+- workflow do **GitHub Actions** para rodar os testes, gerar o relatório e publicar no Pages.
 
 ---
 
