@@ -33,7 +33,7 @@ module.exports = defineConfig({
     baseUrl: webBaseUrl,
     pageLoadTimeout: 45000,
     defaultCommandTimeout: 8000,
-    requestTimeout: 15000,
+    requestTimeout: 10000,
     retries: {
       runMode: process.env.CI ? 2 : 1,
       openMode: 0,
