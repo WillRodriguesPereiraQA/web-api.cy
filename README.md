@@ -170,3 +170,7 @@ O relatório é publicado automaticamente no **GitHub Pages**:
 - [x] Execução de teste API com sucesso em `trello-action-list.cy.js`
 
 ---
+## Evidências
+<img width="1888" height="950" alt="Captura de tela 2026-06-14 174936" src="https://github.com/user-attachments/assets/9cabb40b-a0dd-41f7-a5b2-704c1eb4fcd6" />
+<img width="1892" height="865" alt="Captura de tela 2026-06-14 175123" src="https://github.com/user-attachments/assets/b457405c-a14c-4b86-98f9-ca1ab805519c" />
+
